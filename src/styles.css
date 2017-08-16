@@ -14,3 +14,7 @@ li{
     width: 400px;
     padding: 50px;
 }
+
+.bookImages{
+    min-height: 550px;
+}

@@ -15,8 +15,10 @@ export class HomeComponent implements OnInit {
   constructor(private firebaseService: FirebaseService) {}
   
   ngOnInit() {
-    this.firebaseService.getBooks().subscribe(books => {this.books = books;})
-    console.log('this.books -> ', this.books);
+    this.firebaseService.getBooks().subscribe(allBooks =>{
+      console.log('allBooks - ',allBooks);
+      this.books = allBooks;
+      console.log('this.books  ',this.books);
+    })
   }
-
 }

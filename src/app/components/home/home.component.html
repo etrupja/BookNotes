@@ -1,13 +1,13 @@
 
 <div class="row">
-  <div class="col-md-3 col-sm-12 col-lg-4" *ngFor="let listing of books">
+  <div class="col-md-3 col-sm-12 col-lg-4 bookImages" *ngFor="let book of books">
       <div class="card">
-          <img class="card-img-top" src="{{book.imageUrl}}" alt="Card image cap">
+          <img class="card-img-top" class="img-thumbnail" src="{{book.imageUrl}}">
           <div class="card-block">
             <h4 class="card-title">{{book.title}}</h4>
-            <p class="card-text">A book by: {{book.description}}</p>
             <a href="#" class="btn btn-primary">Book Details</a>
           </div>
         </div>
+        <hr>
   </div>
 </div>
