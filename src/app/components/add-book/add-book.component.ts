@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from "../../services/firebase.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-add-book',
@@ -6,10 +8,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
-
-  constructor() { }
+  author;
+  dateadded;
+  dateread;
+  description;
+  imageUrl;
+  price;
+  rate;
+  title;
+  constructor(private firebaseService:FirebaseService,
+    private router:Router) { }
 
   ngOnInit() {
+  }
+
+  submitAdd(){
+    let book = {
+      author: this.author,
+      dateadded: this.dateadded,
+      dateread: this.dateread,
+      description: this.description,
+      imageUrl: this.imageUrl,
+      price: this.price,
+      rate: this.rate,
+      title: this.title
+    }
+
+    this.firebaseService.addBook(book);
+    this.router.navigate(['books'])
   }
 
 }

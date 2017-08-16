@@ -10,23 +10,34 @@ export class FirebaseService {
   favoriteBooks: FirebaseListObservable<any[]>;
   bookDetails: FirebaseObjectObservable<any>;
 
-  constructor(private db: AngularFireDatabase) {
-   }
+  constructor(private db: AngularFireDatabase) {}
 
 
 
-   getBooks() {
-      this.books = this.db.list('/books') as FirebaseListObservable<Book[]>;
-      return this.books;
-   }
-
-   getFavoriteBooks() {
+  getBooks() {
     this.books = this.db.list('/books') as FirebaseListObservable<Book[]>;
     return this.books;
- }
+  }
 
-    getBookDetails(id){
-      this.bookDetails = this.db.object('/books/'+id) as FirebaseObjectObservable<Book>  
-      return this.bookDetails;     
-    }
+  getFavoriteBooks() {
+    this.books = this.db.list('/books') as FirebaseListObservable<Book[]>;
+    return this.books;
+  }
+
+  getBookDetails(id){
+    this.bookDetails = this.db.object('/books/'+id) as FirebaseObjectObservable<Book>;
+    return this.bookDetails;     
+  }
+
+  updateBook(id, bookDetails){
+    return this.books.update(id,bookDetails);
+  }
+
+  deleteBook(id){
+    return this.books.remove(id);
+  }
+
+  addBook(bookDetails){
+    return this.books.push(bookDetails);
+  }
 }

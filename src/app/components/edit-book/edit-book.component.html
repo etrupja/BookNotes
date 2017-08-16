@@ -1,3 +1,46 @@
-<p>
-  edit-book works!
-</p>
+<a [routerLink]="['/books']">Back</a>
+<br />
+<h2 class="page-header">Edit Book</h2>
+<form (submit)="submitEdit()">
+  <div class="form-group">
+    <label>Book title</label>
+    <input class="form-control" type="text" [(ngModel)]="title" name="title" required>
+  </div>
+  <div class="form-group">
+    <label>Author </label>
+    <input class="form-control" type="text" [(ngModel)]="author" name="author" required>
+  </div>
+  <div class="form-group">
+    <label>Date Added</label>
+    <input class="form-control" type="text" [(ngModel)]="dateadded" name="dateadded" required>
+  </div>
+  <div class="form-group">
+      <label>Date Read</label>
+      <input class="form-control" type="text" [(ngModel)]="dateread" name="dateread" required>
+    </div>
+  <div class="form-group">
+    <label>Description </label>
+    <input class="form-control" type="text" [(ngModel)]="description" name="description" required>
+  </div>
+  <div class="form-group">
+      <label>Price </label>
+      <input class="form-control" type="number" [(ngModel)]="price" name="price" required>
+  </div>
+  <div class="form-group">
+      <label>Rate </label>
+      <input class="form-control" type="number" [(ngModel)]="rate" name="rate" required>
+  </div>
+  <div class="form-group">
+    <div class="col-md-8"> 
+        <label>Image Url </label>
+        <input class="form-control" type="text" [(ngModel)]="imageUrl" name="imageUrl" required>
+    </div>
+    <div class="col-md-4"> </div>
+      <label>Image Preview</label>
+      <img src="{{imageUrl}}" alt="{{title}}">
+  </div>
+
+
+
+  <input type="submit" value="submit" class="btn btn-success">
+</form>

@@ -5,7 +5,8 @@
           <img class="card-img-top" class="img-thumbnail" src="{{book.imageUrl}}">
           <div class="card-block">
             <h4 class="card-title">{{book.title}}</h4>
-            <a [routerLink]="['/book/'+book.$key]" class="btn btn-primary">Book Details</a>
+            <a class="btn btn-primary" [routerLink]="['/book/'+book.$key]" >Book Details</a>
+            <a class="btn btn-default" [routerLink]="['/edit-book/'+book.$key]">Edit</a>
           </div>
         </div>
   </div>

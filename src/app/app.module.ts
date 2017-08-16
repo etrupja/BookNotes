@@ -26,6 +26,8 @@ import {MdButtonModule, MdCheckboxModule, MdCardModule, MdGridListModule} from '
 //Services
 import { FirebaseService } from "./services/firebase.service";
 
+//Forms
+import { FormsModule } from "@angular/forms";
 
 const appRoutes: Routes = [
   {path:'', component:HomeComponent},
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     NavbarComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MdButtonModule, MdCheckboxModule,MdCardModule,MdGridListModule,
