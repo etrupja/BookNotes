@@ -11,14 +11,12 @@ import { FirebaseService } from "../../services/firebase.service";
 })
 export class HomeComponent implements OnInit {
   //get all the books
-  books: any;
+  favoriteBooks: any;
   constructor(private firebaseService: FirebaseService) {}
   
   ngOnInit() {
-    this.firebaseService.getBooks().subscribe(allBooks =>{
-      console.log('allBooks - ',allBooks);
-      this.books = allBooks;
-      console.log('this.books  ',this.books);
+    this.firebaseService.getBooks().subscribe(favoriteBooks =>{
+      this.favoriteBooks = favoriteBooks;
     })
   }
 }

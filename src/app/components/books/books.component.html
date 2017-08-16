@@ -1,3 +1,11 @@
-<p>
-  books works!
-</p>
+<div class="row">
+    <div class="col-md-3 col-sm-12 col-lg-4 bookImages" *ngFor="let book of allBooks">
+        <div class="card">
+            <img class="card-img-top" class="img-thumbnail" src="{{book.imageUrl}}">
+            <div class="card-block">
+              <h4 class="card-title">{{book.title}}</h4>
+              <a href="#" class="btn btn-primary">Book Details</a>
+            </div>
+          </div>
+    </div>
+  </div>
