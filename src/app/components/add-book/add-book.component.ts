@@ -9,13 +9,13 @@ import { Router } from "@angular/router";
 })
 export class AddBookComponent implements OnInit {
   author;
-  dateadded;
-  dateread;
-  description;
-  imageUrl;
-  price;
-  rate;
   title;
+  price;
+  dateadded:Date;
+  dateread?:Date;
+  description;
+  imageUrl?;
+  rate?;
   constructor(private firebaseService:FirebaseService,
     private router:Router) { }
 

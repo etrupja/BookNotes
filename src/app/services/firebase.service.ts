@@ -2,12 +2,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Book } from "../interfaces/Book";
-
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/map';
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class FirebaseService {
   books: FirebaseListObservable<any[]>;
-  favoriteBooks: FirebaseListObservable<any[]>;
+  favoriteBooks: Observable<any>;
   bookDetails: FirebaseObjectObservable<any>;
 
   constructor(private db: AngularFireDatabase) {}
@@ -21,7 +23,11 @@ export class FirebaseService {
 
   getFavoriteBooks() {
     this.books = this.db.list('/books') as FirebaseListObservable<Book[]>;
-    return this.books;
+    this.favoriteBooks = this.books.map(books => {
+      const topRatedBooks = books.filter(item => item.rate > 4 );
+      return topRatedBooks;
+    })
+    return this.favoriteBooks;
   }
 
   getBookDetails(id){
@@ -33,11 +39,11 @@ export class FirebaseService {
     return this.books.update(id,bookDetails);
   }
 
-  deleteBook(id){
-    return this.books.remove(id);
-  }
-
   addBook(bookDetails){
     return this.books.push(bookDetails);
+  }
+
+  deleteBook(id){
+    return this.books.remove(id);
   }
 }

@@ -1,8 +1,8 @@
 export interface Book{
     $key?: string;
     author?: string;
-    dateadded?:  string;
-    dateread?: string;
+    dateadded?:  Date;
+    dateread?: Date;
     description?: string;
     imageUrl?: string;
     price?: number;
