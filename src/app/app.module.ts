@@ -33,6 +33,7 @@ import { FormsModule } from "@angular/forms";
 const appRoutes: Routes = [
   {path:'', component:HomeComponent},
   {path: 'books', component:BooksComponent},
+  {path: 'books/:category', component:BooksComponent},
   {path:'book/:id', component:BookComponent},
   {path: 'add-book', component:AddBookComponent},
   {path:'edit-book/:id', component:EditBookComponent},

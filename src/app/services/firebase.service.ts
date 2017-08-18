@@ -1,4 +1,3 @@
-// import { AngularFireModule } from 'angularfire2';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Book } from "../interfaces/Book";
@@ -8,23 +7,28 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class FirebaseService {
-  books: FirebaseListObservable<any[]>;
+  books: FirebaseListObservable<any[]>; ; //from Firebase
+  bookDetails: FirebaseObjectObservable<any>; //from Firebase
   favoriteBooks: Observable<any>;
-  bookDetails: FirebaseObjectObservable<any>;
-  newBook:Book;
+  booksByCategory: Observable<any>;
   
   constructor(private db: AngularFireDatabase) {}
-
-
 
   getBooks() {
     this.books = this.db.list('/books') as FirebaseListObservable<Book[]>;
     return this.books;
   }
 
+  getBooksByCategory(category:string){
+    this.booksByCategory = this.db.list('/books').map(books => {
+      const booksBycategory = books.filter(item => item.category === category );
+      return booksBycategory;
+    });
+    return this.booksByCategory;
+  }
+
   getFavoriteBooks() {
-    this.books = this.db.list('/books') as FirebaseListObservable<Book[]>;
-    this.favoriteBooks = this.books.map(books => {
+    this.favoriteBooks = this.db.list('/books').map(books => {
       const topRatedBooks = books.filter(item => item.rate > 4 );
       return topRatedBooks;
     })
@@ -37,7 +41,6 @@ export class FirebaseService {
   }
 
   updateBook(id, bookDetails){
-    console.log('Edit bookDetails: ',bookDetails);
     return this.books.update(id,bookDetails);
   }
 
