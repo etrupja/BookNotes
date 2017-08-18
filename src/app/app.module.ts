@@ -10,6 +10,7 @@ import { BookComponent } from './components/book/book.component';
 import { BooksComponent } from './components/books/books.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
+import { DeleteBookComponent } from './components/delete-book/delete-book.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 //firebase configuration
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
   {path: 'books', component:BooksComponent},
   {path:'book/:id', component:BookComponent},
   {path: 'add-book', component:AddBookComponent},
-  {path:'edit-book/:id', component:EditBookComponent}
+  {path:'edit-book/:id', component:EditBookComponent},
+  {path:'delete-book/:id', component:DeleteBookComponent}
 ]
 
 @NgModule({
@@ -45,6 +47,7 @@ const appRoutes: Routes = [
     BooksComponent,
     AddBookComponent,
     EditBookComponent,
+    DeleteBookComponent,
     NavbarComponent
   ],
   imports: [

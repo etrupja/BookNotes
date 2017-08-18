@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 export class AddBookComponent implements OnInit {
   author;
   title;
+  category;
   price;
   dateadded:Date;
   dateread:Date;
@@ -25,16 +26,16 @@ export class AddBookComponent implements OnInit {
   submitAdd(){
     let book = {
       author: this.author,
+      title: this.title,
+      category:this.category,
+      price: this.price,
       dateadded: this.dateadded,
       dateread: this.dateread,
       description: this.description,
-      imageUrl: this.imageUrl,
-      price: this.price,
       rate: this.rate,
-      title: this.title
+      imageUrl: this.imageUrl
     }
     this.firebaseService.addBook(book);
     this.router.navigate(['books'])
   }
-
 }

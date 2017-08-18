@@ -37,6 +37,7 @@ export class FirebaseService {
   }
 
   updateBook(id, bookDetails){
+    console.log('Edit bookDetails: ',bookDetails);
     return this.books.update(id,bookDetails);
   }
 

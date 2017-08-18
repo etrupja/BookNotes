@@ -21,8 +21,9 @@
               </div>
 
                 <div class="btn-group pull-right" role="group" aria-label="Basic example">
-                   <a> <button type="button"  class="btn btn-success"> Edit </button> </a>
-                   <a [routerLink]="['/books']"  href=""></a><button type="button" class="btn btn-default">All Books</button>
+                   <a [routerLink]="['/books']" class="btn btn-default"> All Books </a>
+                   <a [routerLink]="['/edit-book/'+id]" class="btn btn-success"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> 
+                   <a [routerLink]="['/delete-book/'+id]" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span> Delete </a>
                 </div>
           </div>
       </div>   

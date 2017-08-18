@@ -10,13 +10,14 @@ import { Router,ActivatedRoute } from "@angular/router";
 export class EditBookComponent implements OnInit {
   id;
   author;
+  title;
+  category;  
   dateadded;
   dateread;
   description;
   imageUrl;
   price;
   rate;
-  title;
 
   constructor(
     private firebaseService:FirebaseService,
@@ -27,27 +28,28 @@ export class EditBookComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.firebaseService.getBookDetails(this.id).subscribe(book => {
       this.author= book.author;
+      this.title= book.title;
+      this.category = book.category; 
       this.dateadded= book.dateadded;
       this.dateread= book.dateread;
       this.description= book.description;
       this.imageUrl= book.imageUrl;
       this.price= book.price;
-      console.log('this.price  - ',this.price);
       this.rate= book.rate;
-      this.title= book.title;
     });
   }
 
   submitEdit(){
     let book = {
       author: this.author,
+      title: this.title,
+      category: this.category,      
       dateadded: this.dateadded,
       dateread: this.dateread,
       description: this.description,
       imageUrl: this.imageUrl,
       price: this.price,
-      rate: this.rate,
-      title: this.title
+      rate: this.rate
     }
 
     this.firebaseService.updateBook(this.id, book);

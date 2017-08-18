@@ -1,0 +1,11 @@
+<div class="panel panel-info">
+    <div class="panel-heading">Delete confirmation?</div>
+    <div class="panel-body">
+      <p class="alert alert-danger" role="alert">You are about to delete the book: "{{bookDetails.title}}".</p>
+      <p>{{bookDetails.description}}</p>
+      <div class="btn-group pull-right" role="group">
+          <a [routerLink]="['/book/'+id]" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Go Back </a>
+          <a (click)="removeBook()" class="btn btn-default"> <span class="glyphicon glyphicon-remove"></span> Delete Permanently </a>
+        </div>
+    </div>
+  </div>

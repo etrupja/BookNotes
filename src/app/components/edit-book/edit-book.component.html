@@ -11,6 +11,15 @@
     <input class="form-control" type="text" [(ngModel)]="author" name="author" required>
   </div>
   <div class="form-group">
+    <label>Category </label>
+    <select class="form-control" type="text" [(ngModel)]="category" name="category" required>
+      <option value="Programming">Programming</option>
+      <option value="Drama">Drama</option>
+      <option value="Biographies">Biographies</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+  <div class="form-group">
     <label>Date Added</label>
     <input class="form-control" type="text" [(ngModel)]="dateadded" name="dateadded" required>
   </div>
