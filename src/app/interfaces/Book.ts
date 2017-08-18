@@ -1,11 +1,11 @@
 export interface Book{
     $key?: string;
     author?: string;
+    title?: string;
+    price?: number;
     dateadded?:  Date;
     dateread?: Date;
     description?: string;
-    imageUrl?: string;
-    price?: number;
     rate?: number;
-    title?: string;
+    imageUrl?: string;
   }

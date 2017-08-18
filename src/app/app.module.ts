@@ -20,7 +20,7 @@ import { environment } from '../environments/environment';
 
 //browse animations
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCheckboxModule, MdCardModule, MdGridListModule} from '@angular/material';
+import {MdButtonModule, MdCheckboxModule, MdCardModule, MdGridListModule,MdInputModule} from '@angular/material';
 
 
 //Services
@@ -51,7 +51,7 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MdButtonModule, MdCheckboxModule,MdCardModule,MdGridListModule,
+    MdButtonModule, MdCheckboxModule,MdCardModule,MdGridListModule,MdInputModule,
     AngularFireModule.initializeApp(environment.firebase, 'book-store'), // imports firebase/app needed for everything
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features

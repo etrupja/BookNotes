@@ -12,10 +12,10 @@ export class AddBookComponent implements OnInit {
   title;
   price;
   dateadded:Date;
-  dateread?:Date;
+  dateread:Date;
   description;
-  imageUrl?;
-  rate?;
+  imageUrl;
+  rate;
   constructor(private firebaseService:FirebaseService,
     private router:Router) { }
 
@@ -33,7 +33,6 @@ export class AddBookComponent implements OnInit {
       rate: this.rate,
       title: this.title
     }
-
     this.firebaseService.addBook(book);
     this.router.navigate(['books'])
   }

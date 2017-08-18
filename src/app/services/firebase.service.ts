@@ -11,7 +11,8 @@ export class FirebaseService {
   books: FirebaseListObservable<any[]>;
   favoriteBooks: Observable<any>;
   bookDetails: FirebaseObjectObservable<any>;
-
+  newBook:Book;
+  
   constructor(private db: AngularFireDatabase) {}
 
 
@@ -40,7 +41,8 @@ export class FirebaseService {
   }
 
   addBook(bookDetails){
-    return this.books.push(bookDetails);
+    var filteredBook = JSON.parse(JSON.stringify(bookDetails)); //removes the undefined fields
+    return this.books.push(filteredBook);
   }
 
   deleteBook(id){
