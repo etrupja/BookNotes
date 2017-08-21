@@ -15,7 +15,7 @@ export class AddBookComponent implements OnInit {
   // isRead:boolean = false;
   dateread:Date;
   description;
-  // imageUrl;
+  imageUrl;
   rate;
   constructor(private firebaseService:FirebaseService,
     private router:Router) { }
@@ -38,7 +38,7 @@ export class AddBookComponent implements OnInit {
       dateread: this.dateread,
       description: this.description,
       rate: this.rate,
-      // imageUrl: this.imageUrl
+      imageUrl: this.imageUrl
     }
     console.log('book - ', book);
     this.firebaseService.addBook(book);

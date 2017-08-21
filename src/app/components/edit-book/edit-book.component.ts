@@ -15,7 +15,7 @@ export class EditBookComponent implements OnInit {
   // isRead;
   dateread;
   description;
-  // imageUrl;
+  imageUrl;
   price;
   rate;
 
@@ -33,7 +33,7 @@ export class EditBookComponent implements OnInit {
       // this.isRead = book.isRead;
       this.dateread= book.dateread;
       this.description= book.description;
-      // this.imageUrl= book.imageUrl;
+      this.imageUrl= book.imageUrl;
       this.price= book.price;
       this.rate= book.rate;
     });
@@ -47,7 +47,7 @@ export class EditBookComponent implements OnInit {
       // isRead:this.isRead,
       dateread: this.dateread,
       description: this.description,
-      // imageUrl: this.imageUrl,
+      imageUrl: this.imageUrl,
       price: this.price,
       rate: this.rate
     }

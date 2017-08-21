@@ -8,5 +8,5 @@ export interface Book{
     dateread?: Date;
     description?: string;
     rate?: number;
-    // imageUrl?: string;
+    imageUrl?: string;
   }

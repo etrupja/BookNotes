@@ -41,12 +41,13 @@ export class FirebaseService {
   }
 
   updateBook(id, bookDetails){
-    return this.books.update(id,bookDetails);
+    var filteredBook = JSON.parse(JSON.stringify(bookDetails)); //removes the undefined fields
+    return this.books.update(id,filteredBook);
   }
 
   addBook(bookDetails){
     var filteredBook = JSON.parse(JSON.stringify(bookDetails)); //removes the undefined fields
-    console.log('Filtered Book: ',filteredBook);
+    console.log('Filtered Books: ',filteredBook);
     return this.books.push(filteredBook);
   }
 
