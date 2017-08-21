@@ -11,15 +11,6 @@
     <input class="form-control" type="text" [(ngModel)]="author" name="author" required>
   </div>
   <div class="form-group">
-    <label>Category </label>
-    <select class="form-control" type="text" [(ngModel)]="category" name="category" required>
-      <option value="Programming">Programming</option>
-      <option value="Drama">Drama</option>
-      <option value="Biographies">Biographies</option>
-      <option value="Other">Other</option>
-    </select>
-  </div>
-  <div class="form-group">
     <label>Price </label>
     <input class="form-control" min="0" type="number" [(ngModel)]="price" name="price" required>
 </div>
@@ -27,13 +18,20 @@
     <label>Date Added</label>
     <input type="date" class="form-control" [(ngModel)]="dateadded" name="dateadded" required>
   </div>
+  
   <div class="form-group">
+      <label>
+          <input type="checkbox" [(ngModel)]="isRead" name="isRead" (ngModelChange)="switchCheckBox($event)" required> Already read it.
+      </label>
+    </div>
+
+  <div class="form-group" *ngIf="isRead">
       <label>Date Read</label>
       <input type="date" class="form-control" [(ngModel)]="dateread" name="dateread">
     </div>
   <div class="form-group" *ngIf="dateread">
     <label>Description </label>
-    <textarea class="form-control" rows="5" type="text" [(ngModel)]="description" name="description" required></textarea>
+    <textarea class="form-control" rows="5" type="text" [(ngModel)]="description" name="description"></textarea>
   </div>
   <div class="form-group" *ngIf="dateread">
       <label>Rate </label>

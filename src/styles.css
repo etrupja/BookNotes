@@ -5,11 +5,6 @@ li{
     list-style: none;
 }
 
-.col-md-3{
-    width:25%;
-    display:inline-block;
-}
-
 .cardDetails{
     width: 400px;
     padding: 50px;
@@ -17,4 +12,11 @@ li{
 
 .bookImages{
     min-height: 550px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 1px black;
+}
+
+div.card-block{
+    position: absolute;
+    bottom: 0;
 }

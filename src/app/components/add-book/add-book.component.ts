@@ -10,9 +10,9 @@ import { Router } from "@angular/router";
 export class AddBookComponent implements OnInit {
   author;
   title;
-  category;
   price;
   dateadded:Date;
+  isRead:boolean = false;
   dateread:Date;
   description;
   imageUrl;
@@ -23,18 +23,24 @@ export class AddBookComponent implements OnInit {
   ngOnInit() {
   }
 
+  switchCheckBox(event: any){
+    this.isRead = event;
+    console.log('event - ',event);
+  }
+
   submitAdd(){
     let book = {
       author: this.author,
       title: this.title,
-      category:this.category,
       price: this.price,
       dateadded: this.dateadded,
+      isRead: this.isRead,
       dateread: this.dateread,
       description: this.description,
       rate: this.rate,
       imageUrl: this.imageUrl
     }
+    console.log('book - ', book);
     this.firebaseService.addBook(book);
     this.router.navigate(['books'])
   }

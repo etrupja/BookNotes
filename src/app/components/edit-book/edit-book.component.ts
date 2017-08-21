@@ -11,8 +11,8 @@ export class EditBookComponent implements OnInit {
   id;
   author;
   title;
-  category;  
   dateadded;
+  isRead;
   dateread;
   description;
   imageUrl;
@@ -29,8 +29,8 @@ export class EditBookComponent implements OnInit {
     this.firebaseService.getBookDetails(this.id).subscribe(book => {
       this.author= book.author;
       this.title= book.title;
-      this.category = book.category; 
       this.dateadded= book.dateadded;
+      this.isRead = book.isRead;
       this.dateread= book.dateread;
       this.description= book.description;
       this.imageUrl= book.imageUrl;
@@ -43,8 +43,8 @@ export class EditBookComponent implements OnInit {
     let book = {
       author: this.author,
       title: this.title,
-      category: this.category,      
       dateadded: this.dateadded,
+      isRead:this.isRead,
       dateread: this.dateread,
       description: this.description,
       imageUrl: this.imageUrl,

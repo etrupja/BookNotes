@@ -2,9 +2,9 @@ export interface Book{
     $key?: string;
     author?: string;
     title?: string;
-    category?:string;
     price?: number;
     dateadded?:  Date;
+    isRead?:boolean;
     dateread?: Date;
     description?: string;
     rate?: number;

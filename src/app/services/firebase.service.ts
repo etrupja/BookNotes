@@ -10,7 +10,7 @@ export class FirebaseService {
   books: FirebaseListObservable<any[]>; ; //from Firebase
   bookDetails: FirebaseObjectObservable<any>; //from Firebase
   favoriteBooks: Observable<any>;
-  booksByCategory: Observable<any>;
+  // booksByCategory: Observable<any>;
   
   constructor(private db: AngularFireDatabase) {}
 
@@ -19,13 +19,13 @@ export class FirebaseService {
     return this.books;
   }
 
-  getBooksByCategory(category:string){
-    this.booksByCategory = this.db.list('/books').map(books => {
-      const booksBycategory = books.filter(item => item.category === category );
-      return booksBycategory;
-    });
-    return this.booksByCategory;
-  }
+  // getBooksByCategory(category:string){
+  //   this.booksByCategory = this.db.list('/books').map(books => {
+  //     const booksBycategory = books.filter(item => item.category === category );
+  //     return booksBycategory;
+  //   });
+  //   return this.booksByCategory;
+  // }
 
   getFavoriteBooks() {
     this.favoriteBooks = this.db.list('/books').map(books => {
@@ -46,7 +46,8 @@ export class FirebaseService {
 
   addBook(bookDetails){
     var filteredBook = JSON.parse(JSON.stringify(bookDetails)); //removes the undefined fields
-    return this.books.push(filteredBook);
+    console.log('Filtered Book: ',filteredBook);
+    return this.books.push(bookDetails);
   }
 
   deleteBook(id){

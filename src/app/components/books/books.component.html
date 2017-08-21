@@ -1,16 +1,14 @@
-<div *ngIf="!allBooks">
-    Noo books fo this category
-</div>
-
 <div class="row">
-    <div class="col-md-3 col-sm-12 col-lg-4 bookImages rounded" *ngFor="let book of allBooks">
-        <div class="card">
-            <img class="card-img-top" class="img-thumbnail" src="{{book.imageUrl}}">
-            <div class="card-block">
-              <h4 class="card-title">{{book.title}}</h4>
-              <a class="btn btn-primary pull-right" [routerLink]="['/book/'+book.$key]" >Book Details</a>
-            </div>
-          </div>
+        <div class="col-sm-6 col-md-4" *ngFor="let book of allBooks">
+          <div class="thumbnail">
+        <img src="{{book.imageUrl}}" alt="{{book.title}}">
+        <div class="caption">
+            <h3>{{book.title}}</h3>
+            <p>
+                <a class="btn btn-primary" [routerLink]="['/book/'+book.$key]" >Book Details</a>
+                <a class="btn btn-default" [routerLink]="['/edit-book/'+book.$key]">Edit</a>
+            </p>
+        </div>
+        </div>
     </div>
 </div>
-

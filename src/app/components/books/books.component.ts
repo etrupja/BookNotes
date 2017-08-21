@@ -10,7 +10,6 @@ import { Router, ActivatedRoute} from "@angular/router";
 export class BooksComponent implements OnInit {
   //get all the books
   allBooks: any;
-  private parametersObservable: any;
   
   constructor(
     private firebaseService: FirebaseService,
@@ -19,21 +18,7 @@ export class BooksComponent implements OnInit {
 
 
     ngOnInit() {
-      this.parametersObservable = this.route.params.subscribe(params => {
-         const category = params['category'];
-         console.log('category - ',category);
-         if(category=== 'undefined')
-          {
-            this.firebaseService.getBooks().subscribe(allBooks =>{
-              this.allBooks = allBooks;
-            })
-          }
-          else{
-            this.firebaseService.getBooksByCategory(category).subscribe(allBooks =>{
-              this.allBooks = allBooks;
-            })
-          }
-       });
-       console.log(this.allBooks);
+      this.allBooks = this.firebaseService.getBooks();
+      console.log(this.allBooks);
     }
 }
