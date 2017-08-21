@@ -4,9 +4,9 @@ export interface Book{
     title?: string;
     price?: number;
     dateadded?:  Date;
-    isRead?:boolean;
+    // isRead?:boolean;
     dateread?: Date;
     description?: string;
     rate?: number;
-    imageUrl?: string;
+    // imageUrl?: string;
   }

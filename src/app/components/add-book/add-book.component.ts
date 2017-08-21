@@ -12,10 +12,10 @@ export class AddBookComponent implements OnInit {
   title;
   price;
   dateadded:Date;
-  isRead:boolean = false;
+  // isRead:boolean = false;
   dateread:Date;
   description;
-  imageUrl;
+  // imageUrl;
   rate;
   constructor(private firebaseService:FirebaseService,
     private router:Router) { }
@@ -23,10 +23,10 @@ export class AddBookComponent implements OnInit {
   ngOnInit() {
   }
 
-  switchCheckBox(event: any){
-    this.isRead = event;
-    console.log('event - ',event);
-  }
+  // switchCheckBox(event: any){
+  //   this.isRead = event;
+  //   console.log('event - ',event);
+  // }
 
   submitAdd(){
     let book = {
@@ -34,11 +34,11 @@ export class AddBookComponent implements OnInit {
       title: this.title,
       price: this.price,
       dateadded: this.dateadded,
-      isRead: this.isRead,
+      // isRead: this.isRead,
       dateread: this.dateread,
       description: this.description,
       rate: this.rate,
-      imageUrl: this.imageUrl
+      // imageUrl: this.imageUrl
     }
     console.log('book - ', book);
     this.firebaseService.addBook(book);

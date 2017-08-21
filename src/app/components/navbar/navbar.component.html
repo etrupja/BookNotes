@@ -12,19 +12,9 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a [routerLink]="['/']">Home</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Books <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a [routerLink]="['/books/Programming']">Programming</a></li>
-              <li><a [routerLink]="['/books/Drama']">Drama</a></li>
-              <li><a [routerLink]="['/books/Biographies']">Biographies</a></li>
-              <li><a [routerLink]="['/books/Other']">Other</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a [routerLink]="['/books']">All Books</a></li>
-            </ul>
-        </li>
-        <li><a [routerLink]="['/add-book']">Add Book</a></li>
+        <li><a [routerLink]="['/']"> Home </a></li>
+        <li><a [routerLink]="['/books']"> Books </a></li>
+        <li><a [routerLink]="['/add-book']"> Add Book </a></li>
       </ul>
     </div>
   </div>
