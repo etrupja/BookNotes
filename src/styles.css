@@ -34,3 +34,15 @@ div.card-block{
 .quarter-width{
     width: 25%;
 }
+
+
+md-grid-tile{
+    box-shadow: 10px 10px 5px #888888;
+    margin: 1em auto;
+}
+
+.full-heigth {
+    height: -moz-calc(100% - 64px); 
+    height: -webkit-calc(100% - 64px); 
+    height: calc(100% - 64px);
+}
