@@ -10,6 +10,7 @@ export class FirebaseService {
   books: FirebaseListObservable<any[]>; ; //from Firebase
   bookDetails: FirebaseObjectObservable<any>; //from Firebase
   favoriteBooks: Observable<any>;
+  unreadBooks: Observable<any>;
   // booksByCategory: Observable<any>;
   
   constructor(private db: AngularFireDatabase) {}
@@ -33,6 +34,14 @@ export class FirebaseService {
       return topRatedBooks;
     })
     return this.favoriteBooks;
+  }
+
+  getUnreadBooks(){
+    this.unreadBooks = this.db.list('/books').map(books =>{
+      const unreadBooks = books.filter(item => item.dateread == null);
+      return unreadBooks;
+    })
+    return this.unreadBooks;
   }
 
   getBookDetails(id){

@@ -20,3 +20,17 @@ div.card-block{
     position: absolute;
     bottom: 0;
 }
+
+.full-width {
+    width: 100%;
+}
+.half-width {
+    width: 50%;
+}
+
+.third-width{
+    width: 75%;
+}
+.quarter-width{
+    width: 25%;
+}
