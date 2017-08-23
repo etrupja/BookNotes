@@ -46,3 +46,17 @@ md-grid-tile{
     height: -webkit-calc(100% - 64px); 
     height: calc(100% - 64px);
 }
+
+.add-book-form {
+    width: 40%;
+    margin:0 auto;
+    padding: 2em;
+    box-shadow: 0 0 1px black;
+}
+
+.edit-book-form{
+    width: 40%;
+    margin:0 auto;
+    padding: 2em;
+    box-shadow: 0 0 1px black;
+}

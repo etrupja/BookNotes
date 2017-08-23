@@ -30,7 +30,6 @@ export class EditBookComponent implements OnInit {
       this.author= book.author;
       this.title= book.title;
       this.dateadded= book.dateadded;
-      // this.isRead = book.isRead;
       this.dateread= book.dateread;
       this.description= book.description;
       this.imageUrl= book.imageUrl;
@@ -39,12 +38,21 @@ export class EditBookComponent implements OnInit {
     });
   }
 
+  updateDateAdded(date){
+    this.dateadded = date;
+    this.dateadded = this.dateadded.toDateString();
+  }
+
+  updateDateRead(date){
+    this.dateread =date;
+    this.dateread = this.dateread.toDateString();
+  }
+
   submitEdit(){
     let book = {
       author: this.author,
       title: this.title,
       dateadded: this.dateadded,
-      // isRead:this.isRead,
       dateread: this.dateread,
       description: this.description,
       imageUrl: this.imageUrl,
