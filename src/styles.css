@@ -68,3 +68,8 @@ md-grid-tile{
 
 .left{float: left}
 .right{float: left; padding: 25px;}
+
+.delete-confirm{
+    margin:0 auto;
+    width: 40%;
+}

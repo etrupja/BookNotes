@@ -1,9 +1,8 @@
 <md-toolbar> My Top Rated Books </md-toolbar>
 <md-grid-list cols="4">
     <md-grid-tile *ngFor="let book of favoriteBooks">
-        <md-card class="example-card">
+        <md-card>
             <md-card-header>
-              <div md-card-avatar class="example-header-image"></div>
               <md-card-title><h4>{{book.title}}</h4></md-card-title>
             </md-card-header>
             <img md-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
@@ -24,9 +23,8 @@
 <md-toolbar> Books I have not read yet </md-toolbar>
 <md-grid-list cols="4">
     <md-grid-tile *ngFor="let book of unreadBooks">
-        <md-card class="example-card">
+        <md-card>
             <md-card-header>
-              <div md-card-avatar class="example-header-image"></div>
               <md-card-title><h4>{{book.title}}</h4></md-card-title>
             </md-card-header>
             <img md-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
