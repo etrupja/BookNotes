@@ -60,3 +60,11 @@ md-grid-tile{
     padding: 2em;
     box-shadow: 0 0 1px black;
 }
+
+.details-book{
+    margin:0 auto;
+    width: 40%;
+}
+
+.left{float: left}
+.right{float: left; padding: 25px;}

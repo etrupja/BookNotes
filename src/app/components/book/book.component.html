@@ -1,31 +1,35 @@
-<div class="alert alert-info" role="alert"><h3 class="page-header">Book Details</h3></div>
+<md-card>Book Details</md-card>
 
-  <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
-    <div class="row panel">
-      <div class="col-md-4"> 
-          <img src="{{bookDetails.imageUrl}}" class="img-thumbnail" />
-      </div>
-          <div class="col-md-8  col-xs-12">
-              <div class="header">
-                  <h1>{{bookDetails.title}}</h1>
-                  <h4>Book Description</h4>
-                  <span>{{bookDetails.description}}</span>
-<br><hr>
-                  <ul class="list-group">
-                      <li class="list-group-item active"> Book Details</li>
-                      <li class="list-group-item"><span class="glyphicon glyphicon-user"></span> Author:    <b>{{bookDetails.author}}</b></li>
-                      <li class="list-group-item"><span class="glyphicon glyphicon-calendar"></span> Date Added:    <b>{{bookDetails.dateadded}}</b></li>
-                      <li class="list-group-item"><span class="glyphicon glyphicon-calendar"></span> Date Read:     <b>{{bookDetails.dateread}}</b></li>
-                      <li class="list-group-item"><span>$</span> Price:       <b>{{bookDetails.price}}</b></li>
-                      <li class="list-group-item"><span class="glyphicon glyphicon-star"></span> Rate:    <b>{{bookDetails.rate}}</b></li>
-                  </ul>
-              </div>
+<div class="details-book">
+        <md-card>
+                <md-card-title>
+                        <span class="md-headline">{{bookDetails.title}}</span>
+                </md-card-title>
+                <md-card-content>
+                    <div class="left">
+                            <img src="{{bookDetails.imageUrl}}" />
+                    </div>
+                    <div class="right">
+                        <md-list>
+                                <md-list-item> <i class="material-icons">person_pin</i> Author: <b>{{bookDetails.author}}</b> </md-list-item>
+                                <md-list-item> <i class="material-icons">date_range</i> Date Added: <b>{{bookDetails.dateadded}}</b> </md-list-item>
+                                <md-list-item> <i class="material-icons">date_range</i> Date Read: <b>{{bookDetails.dateread}}</b> </md-list-item>
+                                <md-list-item> <i class="material-icons">attach_money</i> Price: <b>{{bookDetails.price}}</b> </md-list-item>
+                                <md-list-item> <i class="material-icons">star_rate</i> Rate: <b>{{bookDetails.rate}}</b></md-list-item>
+                        </md-list>
+                    </div>
+                    <hr>
+                    <md-toolbar>Description</md-toolbar>
+                    {{bookDetails.description}}
+                </md-card-content>
+                <hr>
+                <md-card-actions>
+                    <button [routerLink]="['/books']" md-raised-button> <i class="material-icons">view_module</i> All Books </button>
+                    <button [routerLink]="['/edit-book/'+id]" md-raised-button color="primary"> <i class="material-icons">mode_edit</i> Edit </button> 
+                    <button [routerLink]="['/delete-book/'+id]" md-raised-button color="warn"> <i class="material-icons">delete_sweep</i> Delete </button>
+                </md-card-actions>
+            </md-card>
+</div>
+            
 
-                <div class="btn-group pull-right" role="group" aria-label="Basic example">
-                   <a [routerLink]="['/books']" class="btn btn-default"> All Books </a>
-                   <a [routerLink]="['/edit-book/'+id]" class="btn btn-success"> <span class="glyphicon glyphicon-pencil"></span> Edit </a> 
-                   <a [routerLink]="['/delete-book/'+id]" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span> Delete </a>
-                </div>
-          </div>
-      </div>   
-  </div>
+
