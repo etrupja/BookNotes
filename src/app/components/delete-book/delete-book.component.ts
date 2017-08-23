@@ -9,7 +9,8 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class DeleteBookComponent implements OnInit {
   id: any;
-  bookDetails: any;
+  bookTitle: any;
+  bookDescription: any;
 
   constructor(private firebaseService: FirebaseService,private router:Router,private route:ActivatedRoute) { }
 
@@ -17,7 +18,8 @@ export class DeleteBookComponent implements OnInit {
     // get the book ID
     this.id = this.route.snapshot.params['id'];
     this.firebaseService.getBookDetails(this.id).subscribe(book => {
-      this.bookDetails = book;
+      this.bookTitle = book.title;
+      this.bookDescription = book.description;
     });
   }
 

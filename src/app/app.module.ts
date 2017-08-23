@@ -31,13 +31,16 @@ import {
   MdNativeDateModule, 
   MdToolbarModule, 
   MdListModule,
-  MdIconModule} from '@angular/material';
+  MdIconModule,
+  DateAdapter,
+  MD_DATE_FORMATS} from '@angular/material';
 
 //Services
 import { FirebaseService } from "./services/firebase.service";
 
 //Forms
 import { FormsModule } from "@angular/forms";
+import { AppDateAdapter } from "./adapter/AppDateAdapter";
 
 const appRoutes: Routes = [
   {path:'', component:HomeComponent},
@@ -47,6 +50,19 @@ const appRoutes: Routes = [
   {path:'edit-book/:id', component:EditBookComponent},
   {path:'delete-book/:id', component:DeleteBookComponent}
 ]
+
+export const APP_DATE_FORMATS =
+{
+    parse: {
+        dateInput: { month: 'short', year: 'numeric', day: 'numeric' },
+    },
+    display: {
+        dateInput: 'input',
+        monthYearLabel: { year: 'numeric', month: 'numeric' },
+        dateA11yLabel: { year: 'numeric', month: 'long', day: 'numeric' },
+        monthYearA11yLabel: { year: 'numeric', month: 'long' },
+    }
+};
 
 @NgModule({
   declarations: [
@@ -69,7 +85,7 @@ const appRoutes: Routes = [
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService, { provide: DateAdapter, useClass: AppDateAdapter},{provide: MD_DATE_FORMATS, useValue: APP_DATE_FORMATS}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

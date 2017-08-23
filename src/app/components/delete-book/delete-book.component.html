@@ -1,9 +1,9 @@
 <md-toolbar color="warn"> Delete confirmation </md-toolbar>
 <div class="delete-confirm">
-    <md-toolbar color="primary">You are about to delete the book: "{{bookDetails.title}}".</md-toolbar>
+    <md-toolbar color="primary">You are about to delete the book: "{{bookTitle}}".</md-toolbar>
     <md-toolbar> 
         <md-toolbar-row>
-            <span>{{bookDetails.description}}</span>
+            <span>{{bookDescription}}</span>
         </md-toolbar-row>
         <md-toolbar-row>
             <button [routerLink]="['/book/'+id]" md-button color="accent"> Go Back </button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from "../../services/firebase.service";
 import { Router } from "@angular/router";
 import {  } from "../../date_adapter/AppDateAdapter";
+import { AppDateAdapter } from "../../adapter/AppDateAdapter";
 
 @Component({
   selector: 'app-add-book',
@@ -19,20 +20,20 @@ export class AddBookComponent implements OnInit {
   rate;
   
   isRead:boolean = false;
+  dateAdapter:AppDateAdapter = new AppDateAdapter();
   constructor(
     private firebaseService:FirebaseService,
     private router:Router) { }
 
-  ngOnInit() {
-  }
-  updateDateAdded(date){
-    this.dateadded = date;
-    this.dateadded = this.dateadded.toDateString();
+  ngOnInit() {}
+
+  updateDateAdded(dateAdded){
+    this.dateadded = this.dateAdapter.format(dateAdded,"input");
+    console.log('this.dateadded - ', this.dateadded);
   }
 
-  updateDateRead(date){
-    this.dateread =date;
-    this.dateread = this.dateread.toDateString();
+  updateDateRead(dateRead){
+    this.dateread = this.dateAdapter.format(dateRead,"input");
     this.isRead = true;
   }
 
