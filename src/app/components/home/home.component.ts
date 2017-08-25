@@ -27,6 +27,14 @@ export class HomeComponent implements OnInit {
         if (auth != null) {
           this.user = af.authState;
           this.authenticated = true;
+          
+          this.firebaseService.getFavoriteBooks().subscribe(favoriteBooks =>{
+            this.favoriteBooks = favoriteBooks;
+          })
+          this.firebaseService.getUnreadBooks().subscribe(books =>{
+            this.unreadBooks = books;
+          })
+
         }
       });
   }

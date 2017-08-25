@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 import { Observable } from "rxjs/Observable";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase/app';
@@ -12,8 +12,6 @@ import { EventEmitter } from "events";
 export class NavbarComponent implements OnInit {
   user: Observable<firebase.User>;
   authenticated: boolean = false;
-
-  @Output() myEvent = new EventEmitter();
 
   constructor(public af: AngularFireAuth) { 
     this.af.authState.subscribe(
@@ -34,7 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
    logout() {
-     this.authenticated = false;
+    this.authenticated = false;
     this.af.auth.signOut();
   }
 }
