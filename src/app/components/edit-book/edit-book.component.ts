@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from "../../services/firebase.service";
 import { Router,ActivatedRoute } from "@angular/router";
+import { AppDateAdapter } from "../../adapter/AppDateAdapter";
+import { NgForm } from "@angular/forms"
 
 @Component({
   selector: 'app-edit-book',
@@ -11,14 +13,15 @@ export class EditBookComponent implements OnInit {
   id;
   author;
   title;
-  dateadded;
-  // isRead;
+  dateadded:Date;
   dateread;
   description;
   imageUrl;
   price;
   rate;
 
+  dateAdapter:AppDateAdapter = new AppDateAdapter();
+  
   constructor(
     private firebaseService:FirebaseService,
     private router: Router,
@@ -29,23 +32,26 @@ export class EditBookComponent implements OnInit {
     this.firebaseService.getBookDetails(this.id).subscribe(book => {
       this.author= book.author;
       this.title= book.title;
-      this.dateadded= book.dateadded;
+      this.dateadded= this.dateAdapter.format(book.dateadded,"normal");
       this.dateread= book.dateread;
       this.description= book.description;
       this.imageUrl= book.imageUrl;
       this.price= book.price;
       this.rate= book.rate;
     });
+
+    // console.log('DateAdded - ',this.dateadded);
+    // console.log('DateRead - ',this.dateread);
+
+
   }
 
   updateDateAdded(date){
-    this.dateadded = date;
-    this.dateadded = this.dateadded.toDateString();
+    this.dateadded = this.dateAdapter.format(date,"input");
   }
 
   updateDateRead(date){
-    this.dateread =date;
-    this.dateread = this.dateread.toDateString();
+    this.dateread =this.dateAdapter.format(date,"input");
   }
 
   submitEdit(){

@@ -2,7 +2,7 @@
 
 <div class="edit-book-form">
     <a [routerLink]="['/books']">Back</a>
-    <form (submit)="submitEdit()">
+    <form #values="ngForm" (submit)="submitEdit()">
       <md-input-container class="full-width">
         <input mdInput placeholder="Book Title" [(ngModel)]="title" name="title">
       </md-input-container>
@@ -13,18 +13,18 @@
         <input mdInput placeholder="Book Price" type="number" [(ngModel)]="price" name="price">
       </md-input-container>
     
-      <table class="full-width" cellspacing="0">
+      <table class="full-width" cellspacing="1">
           <tr>
             <td>
-                <md-input-container class="full-width">
-                    <input mdInput [mdDatepicker]="dateadded" placeholder="Date Added " >
+                  <md-input-container class="full-width">
+                    <input mdInput [mdDatepicker]="dateadded" name="dateadded" placeholder="Date Added">
                     <button mdSuffix [mdDatepickerToggle]="dateadded"></button>
                   </md-input-container>
                   <md-datepicker #dateadded (selectedChanged)="updateDateAdded($event)"></md-datepicker>
             </td>
             <td>
                 <md-input-container class="full-width" >
-                    <input mdInput [mdDatepicker]="dateread" placeholder="Date Read " >
+                    <input mdInput [mdDatepicker]="dateread" placeholder="Date Read ">
                     <button mdSuffix [mdDatepickerToggle]="dateread"></button>
                   </md-input-container>
                   <md-datepicker #dateread (selectedChanged)="updateDateRead($event)"></md-datepicker>

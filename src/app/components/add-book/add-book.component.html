@@ -27,7 +27,7 @@
                     <input mdInput [mdDatepicker]="dateread" placeholder="Date Read " >
                     <button mdSuffix [mdDatepickerToggle]="dateread"></button>
                   </md-input-container>
-                  <md-datepicker #dateread (selectedChanged)="updateDateRead(dateread.value)"></md-datepicker>
+                  <md-datepicker #dateread (selectedChanged)="updateDateRead($event)"></md-datepicker>
             </td>
           </tr>
       </table>

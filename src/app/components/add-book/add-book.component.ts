@@ -34,6 +34,7 @@ export class AddBookComponent implements OnInit {
 
   updateDateRead(dateRead){
     this.dateread = this.dateAdapter.format(dateRead,"input");
+    console.log('this.dateRead - ', this.dateread);
     this.isRead = true;
   }
 
