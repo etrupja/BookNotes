@@ -1,40 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-li{
-    list-style: none;
-}
+li{ list-style: none; }
+td{ padding-right: 50px; }
 
-.cardDetails{
-    width: 400px;
-    padding: 50px;
-}
-
-.bookImages{
-    min-height: 550px;
-    margin-bottom: 50px;
-    box-shadow: 0 0 1px black;
-}
-
-div.card-block{
-    position: absolute;
-    bottom: 0;
-}
-
-.full-width {
-    width: 100%;
-}
-.half-width {
-    width: 50%;
-}
-
-.third-width{
-    width: 75%;
-}
-.quarter-width{
-    width: 25%;
-}
-
+.full-width { width: 100%; }
+.half-width { width: 50%; }
+.third-width{ width: 75%; }
+.quarter-width{ width: 25%; }
 
 md-grid-tile{
     box-shadow: 10px 10px 5px #888888;
@@ -69,7 +42,4 @@ md-grid-tile{
 .left{float: left}
 .right{float: left; padding: 25px;}
 
-.delete-confirm{
-    margin:0 auto;
-    width: 40%;
-}
+.delete-confirm{margin:0 auto; width: 40%;}

@@ -56,7 +56,6 @@ export class FirebaseService {
 
   addBook(bookDetails){
     var filteredBook = JSON.parse(JSON.stringify(bookDetails)); //removes the undefined fields
-    console.log('Filtered Books: ',filteredBook);
     return this.books.push(filteredBook);
   }
 

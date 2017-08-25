@@ -29,12 +29,10 @@ export class AddBookComponent implements OnInit {
 
   updateDateAdded(dateAdded){
     this.dateadded = this.dateAdapter.format(dateAdded,"input");
-    console.log('this.dateadded - ', this.dateadded);
   }
 
   updateDateRead(dateRead){
     this.dateread = this.dateAdapter.format(dateRead,"input");
-    console.log('this.dateRead - ', this.dateread);
     this.isRead = true;
   }
 
@@ -50,7 +48,6 @@ export class AddBookComponent implements OnInit {
       imageUrl: this.imageUrl
     }
 
-    console.log('book - ', book);
     this.firebaseService.addBook(book);
     this.router.navigate(['books'])
   }

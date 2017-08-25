@@ -2,7 +2,7 @@ import { NativeDateAdapter } from "@angular/material";
 
 export class AppDateAdapter extends NativeDateAdapter {
 
-    format(date: Date, displayFormat: Object): any {
+    format(date: Date, displayFormat: Object): string {
 
         if (displayFormat === 'input') {
             const day = date.getDate();
@@ -10,7 +10,7 @@ export class AppDateAdapter extends NativeDateAdapter {
             const year = date.getFullYear();
             return `${year}-${month}-${day}`;
         } else {
-            return date;
+            return date.toDateString();
         }
     }
 }

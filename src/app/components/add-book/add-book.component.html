@@ -13,7 +13,7 @@
         <input mdInput placeholder="Book Price" type="number" [(ngModel)]="price" name="price">
       </md-input-container>
     
-      <table class="full-width" cellspacing="0">
+      <table class="full-width" cellspacing="10px;">
           <tr>
             <td>
                 <md-input-container class="full-width">
@@ -45,9 +45,7 @@
       <md-input-container class="third-width">
           <input mdInput placeholder="Image Url (enter image URL)" [(ngModel)]="imageUrl" name="imageUrl">
       </md-input-container>
-      <md-card class="quarter-width">
-          <img src="{{imageUrl}}" alt="{{title}}">
-      </md-card>
+      <img src="{{imageUrl}}" alt="{{title}}">
       <hr>
       <button md-raised-button value="submit"> Create Book </button>
     </form>

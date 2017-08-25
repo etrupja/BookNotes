@@ -12,42 +12,32 @@
       <md-input-container class="full-width">
         <input mdInput placeholder="Book Price" type="number" [(ngModel)]="price" name="price">
       </md-input-container>
+      
+      <md-input-container class="full-width" >
+          <input mdInput [(ngModel)]="dateadded" [mdDatepicker]="da" placeholder="Date Added " [ngModelOptions]="{standalone: true}">
+          <button mdSuffix [mdDatepickerToggle]="da"></button>
+        </md-input-container>
+      <md-datepicker #da (selectedChanged)="updateDateAdded($event)"></md-datepicker>
+      <md-input-container class="full-width" >
+          <input mdInput [(ngModel)]="dateread" [mdDatepicker]="dr" placeholder="Date Read " [ngModelOptions]="{standalone: true}">
+          <button mdSuffix [mdDatepickerToggle]="dr"></button>
+        </md-input-container>
+      <md-datepicker #dr (selectedChanged)="updateDateRead($event)"></md-datepicker>
+
+      
+      <md-input-container class="full-width">
+          <textarea mdInput rows="5" placeholder="Book Description" [(ngModel)]="description" name="description" ></textarea>
+        </md-input-container>
     
-      <table class="full-width" cellspacing="1">
-          <tr>
-            <td>
-                  <md-input-container class="full-width">
-                    <input mdInput [mdDatepicker]="dateadded" name="dateadded" placeholder="Date Added">
-                    <button mdSuffix [mdDatepickerToggle]="dateadded"></button>
-                  </md-input-container>
-                  <md-datepicker #dateadded (selectedChanged)="updateDateAdded($event)"></md-datepicker>
-            </td>
-            <td>
-                <md-input-container class="full-width" >
-                    <input mdInput [mdDatepicker]="dateread" placeholder="Date Read ">
-                    <button mdSuffix [mdDatepickerToggle]="dateread"></button>
-                  </md-input-container>
-                  <md-datepicker #dateread (selectedChanged)="updateDateRead($event)"></md-datepicker>
-            </td>
-          </tr>
-      </table>
-    
-      <div>
-          <md-input-container class="full-width">
-              <textarea mdInput rows="5" placeholder="Book Description" [(ngModel)]="description" name="description" ></textarea>
-            </md-input-container>
-        
-          <md-input-container class="full-width">
-            <input mdInput placeholder="Book Rate (1-5)" min="1" max="5" step="0.1" type="number" [(ngModel)]="rate" name="rate">
-          </md-input-container>    
-      </div>
+      <md-input-container class="full-width">
+        <input mdInput placeholder="Book Rate (1-5)" min="1" max="5" step="0.1" type="number" [(ngModel)]="rate" name="rate">
+      </md-input-container>    
      
+
       <md-input-container class="third-width">
           <input mdInput placeholder="Image Url (enter image URL)" [(ngModel)]="imageUrl" name="imageUrl">
       </md-input-container>
-      <md-card class="quarter-width">
-          <img src="{{imageUrl}}" alt="{{title}}">
-      </md-card>
+      <img src="{{imageUrl}}" alt="{{title}}">
       <hr>
       <button md-raised-button value="submit"> Save Changes </button>
     </form>

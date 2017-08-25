@@ -13,12 +13,15 @@ export class EditBookComponent implements OnInit {
   id;
   author;
   title;
-  dateadded:Date;
+  dateadded;
   dateread;
   description;
   imageUrl;
   price;
   rate;
+
+  dateTest =  new Date(2015, 9, 8, 0, 0, 0); 
+  myDate:any = this.dateTest.toLocaleString();
 
   dateAdapter:AppDateAdapter = new AppDateAdapter();
   
@@ -32,18 +35,13 @@ export class EditBookComponent implements OnInit {
     this.firebaseService.getBookDetails(this.id).subscribe(book => {
       this.author= book.author;
       this.title= book.title;
-      this.dateadded= this.dateAdapter.format(book.dateadded,"normal");
-      this.dateread= book.dateread;
+      this.dateadded= this.dateAdapter.format(new Date(book.dateadded),"input");
+      this.dateread= this.dateAdapter.format(new Date(book.dateread),"input");
       this.description= book.description;
       this.imageUrl= book.imageUrl;
       this.price= book.price;
       this.rate= book.rate;
     });
-
-    // console.log('DateAdded - ',this.dateadded);
-    // console.log('DateRead - ',this.dateread);
-
-
   }
 
   updateDateAdded(date){
