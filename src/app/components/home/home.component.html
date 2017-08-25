@@ -1,40 +1,46 @@
-<md-toolbar> My Top Rated Books </md-toolbar>
-<md-grid-list cols="4">
-    <md-grid-tile *ngFor="let book of favoriteBooks">
-        <md-card>
-            <md-card-header>
-              <md-card-title><h4>{{book.title}}</h4></md-card-title>
-            </md-card-header>
-            <img md-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
-            <md-card-content>
-              <p></p>
-            </md-card-content>
-            <md-card-actions>
-              <button md-button md-raised-button [routerLink]="['/book/'+book.$key]"> Book Details</button>
-              <button md-button md-raised-button [routerLink]="['/edit-book/'+book.$key]"> Edit Book</button>
-            </md-card-actions>
-          </md-card>
-    </md-grid-tile>
-</md-grid-list>
+<div *ngIf="authenticated"> 
+    <md-toolbar> My Top Rated Books </md-toolbar>
+    <md-grid-list cols="4">
+        <md-grid-tile *ngFor="let book of favoriteBooks">
+            <md-card>
+                <md-card-header>
+                  <md-card-title><h4>{{book.title}}</h4></md-card-title>
+                </md-card-header>
+                <img md-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
+                <md-card-content>
+                  <p></p>
+                </md-card-content>
+                <md-card-actions>
+                  <button md-button md-raised-button [routerLink]="['/book/'+book.$key]"> Book Details</button>
+                  <button md-button md-raised-button [routerLink]="['/edit-book/'+book.$key]"> Edit Book</button>
+                </md-card-actions>
+              </md-card>
+        </md-grid-tile>
+    </md-grid-list>
+    
+    <br>
+    <br>
+    <br>
+    <md-toolbar> Books I have not read yet </md-toolbar>
+    <md-grid-list cols="4">
+        <md-grid-tile *ngFor="let book of unreadBooks">
+            <md-card>
+                <md-card-header>
+                  <md-card-title><h4>{{book.title}}</h4></md-card-title>
+                </md-card-header>
+                <img md-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
+                <md-card-content>
+                  <p></p>
+                </md-card-content>
+                <md-card-actions>
+                  <button md-button md-raised-button [routerLink]="['/book/'+book.$key]"> Book Details</button>
+                  <button md-button md-raised-button [routerLink]="['/edit-book/'+book.$key]"> Edit Book</button>
+                </md-card-actions>
+              </md-card>
+        </md-grid-tile>
+    </md-grid-list>
+</div>
 
-<br>
-<br>
-<br>
-<md-toolbar> Books I have not read yet </md-toolbar>
-<md-grid-list cols="4">
-    <md-grid-tile *ngFor="let book of unreadBooks">
-        <md-card>
-            <md-card-header>
-              <md-card-title><h4>{{book.title}}</h4></md-card-title>
-            </md-card-header>
-            <img md-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
-            <md-card-content>
-              <p></p>
-            </md-card-content>
-            <md-card-actions>
-              <button md-button md-raised-button [routerLink]="['/book/'+book.$key]"> Book Details</button>
-              <button md-button md-raised-button [routerLink]="['/edit-book/'+book.$key]"> Edit Book</button>
-            </md-card-actions>
-          </md-card>
-    </md-grid-tile>
-</md-grid-list>
+<div *ngIf="!authenticated">
+    <h1>You are not authenticated!</h1>
+</div>

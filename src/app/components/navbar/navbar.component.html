@@ -12,10 +12,15 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a [routerLink]="['/']"> Home </a></li>
-        <li><a [routerLink]="['/books']"> Books </a></li>
-        <li><a [routerLink]="['/add-book']"> Add Book </a></li>
+        <li *ngIf="authenticated"><a [routerLink]="['/']"> Home </a></li>
+        <li *ngIf="authenticated"><a [routerLink]="['/books']"> Books </a></li>
+        <li *ngIf="authenticated"><a [routerLink]="['/add-book']"> Add Book </a></li>
       </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+          <li *ngIf="!authenticated" ><a (click)="login()">Login</a></li>
+          <li *ngIf="authenticated" ><a (click)="logout()">Logout</a></li>
+        </ul>
     </div>
   </div>
 </nav>

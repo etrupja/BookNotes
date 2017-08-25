@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Book } from "../../interfaces/Book";
 import { FirebaseService } from "../../services/firebase.service";
+import { AngularFireAuth } from "angularfire2/auth";
+import { Observable } from "rxjs/Observable";
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +16,20 @@ export class HomeComponent implements OnInit {
   //get all the books
   favoriteBooks: any;
   unreadBooks: any;
-  constructor(private firebaseService: FirebaseService) {}
+
+  //authentication related
+  authenticated: boolean = false;
+  user: Observable<firebase.User>;
+  
+  constructor(private firebaseService: FirebaseService, public af: AngularFireAuth) {
+    this.af.authState.subscribe(
+      (auth) => {
+        if (auth != null) {
+          this.user = af.authState;
+          this.authenticated = true;
+        }
+      });
+  }
   
   ngOnInit() {
     this.firebaseService.getFavoriteBooks().subscribe(favoriteBooks =>{
