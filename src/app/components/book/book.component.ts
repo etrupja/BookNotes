@@ -9,7 +9,14 @@ import { FirebaseService } from "../../services/firebase.service";
 })
 export class BookComponent implements OnInit {
   id: any;
-  bookDetails: any;
+  title;
+  author;
+  dateadded;
+  dateread;
+  price;
+  rate;
+  description;
+  imageUrl;
 
   constructor(private firebaseService: FirebaseService,private router:Router,private route:ActivatedRoute) { }
 
@@ -17,7 +24,15 @@ export class BookComponent implements OnInit {
     // get the book ID
     this.id = this.route.snapshot.params['id'];
     this.firebaseService.getBookDetails(this.id).subscribe(book => {
-      this.bookDetails = book;
+      this.title = book.title;
+      this.author = book.author;
+      this.dateadded = book.dateAdded;
+      this.dateread = book.dateRead;
+      this.price=book.price;
+      this.rate = book.price;
+      this.rate = book.price;
+      this.description = book.description;
+      this.imageUrl = book.imageUrl;
     });
   }
 }

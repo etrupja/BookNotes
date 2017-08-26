@@ -3,24 +3,23 @@
 <div class="details-book">
         <md-card>
                 <md-card-title>
-                        <span class="md-headline">{{bookDetails.title}}</span>
+                        <span class="md-headline">{{title}}</span>
                 </md-card-title>
                 <md-card-content>
                     <div class="left">
-                            <img src="{{bookDetails.imageUrl}}" />
+                            <img src="{{imageUrl}}" />
                     </div>
                     <div class="right">
                         <md-list>
-                                <md-list-item> <i class="material-icons">person_pin</i> Author: <b>{{bookDetails.author}}</b> </md-list-item>
-                                <md-list-item> <i class="material-icons">date_range</i> Date Added: <b>{{bookDetails.dateadded}}</b> </md-list-item>
-                                <md-list-item> <i class="material-icons">date_range</i> Date Read: <b>{{bookDetails.dateread}}</b> </md-list-item>
-                                <md-list-item> <i class="material-icons">attach_money</i> Price: <b>{{bookDetails.price}}</b> </md-list-item>
-                                <md-list-item> <i class="material-icons">star_rate</i> Rate: <b>{{bookDetails.rate}}</b></md-list-item>
+                                <md-list-item> <i class="material-icons">person_pin</i> Author: <b>{{author}}</b> </md-list-item>
+                                <md-list-item> <i class="material-icons">date_range</i> Date Added: <b>{{dateadded}}</b> </md-list-item>
+                                <md-list-item> <i class="material-icons">date_range</i> Date Read: <b>{{dateread}}</b> </md-list-item>
+                                <md-list-item> <i class="material-icons">star</i> Rate: <b>{{rate}}</b></md-list-item>
                         </md-list>
                     </div>
                     <hr>
                     <md-toolbar>Description</md-toolbar>
-                    {{bookDetails.description}}
+                    {{description}}
                 </md-card-content>
                 <hr>
                 <md-card-actions>
