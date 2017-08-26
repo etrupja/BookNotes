@@ -12,6 +12,7 @@ import { AddBookComponent } from './components/add-book/add-book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 //firebase configuration
 import { AngularFireModule } from 'angularfire2';
@@ -30,6 +31,7 @@ import {
   MdDatepickerModule, 
   MdNativeDateModule, 
   MdToolbarModule, 
+  MdTabsModule,
   MdListModule,
   MdIconModule,
   DateAdapter,
@@ -73,13 +75,14 @@ export const APP_DATE_FORMATS =
     AddBookComponent,
     EditBookComponent,
     DeleteBookComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MdButtonModule, MdCheckboxModule,MdCardModule,MdGridListModule,MdInputModule,MdDatepickerModule,MdNativeDateModule,MdToolbarModule,MdListModule,MdIconModule,
+    MdButtonModule, MdCheckboxModule,MdCardModule,MdGridListModule,MdInputModule,MdDatepickerModule,MdNativeDateModule,MdToolbarModule,MdListModule,MdIconModule,MdTabsModule, 
     AngularFireModule.initializeApp(environment.firebase, 'book-store'), // imports firebase/app needed for everything
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
