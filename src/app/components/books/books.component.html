@@ -7,7 +7,7 @@
             </md-card-header>
             <img md-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
             <md-card-actions>
-              <button md-button md-raised-button [routerLink]="['/book/'+book.$key]"> <i class="material-icons">visibility</i> Book Details</button>
+              <button md-button md-raised-button class="detailsButton" [routerLink]="['/book/'+book.$key]"> <i class="material-icons">visibility</i> Book Details</button>
               <button md-button md-raised-button class="editButton" [routerLink]="['/edit-book/'+book.$key]"> <i class="material-icons">mode_edit</i> Edit Book</button>
             </md-card-actions>
           </md-card>

@@ -29,8 +29,7 @@ export class BookComponent implements OnInit {
       this.dateadded = book.dateadded;
       this.dateread = book.dateread;
       this.price=book.price;
-      this.rate = book.price;
-      this.rate = book.price;
+      this.rate = book.rate;
       this.description = book.description;
       this.imageUrl = book.imageUrl;
     });
