@@ -1,4 +1,4 @@
-<md-card>Book Details</md-card>
+<md-toolbar> Book Details </md-toolbar>
 
 <div class="details-book">
         <md-card>
@@ -21,10 +21,9 @@
                     <md-toolbar>Description</md-toolbar>
                     {{description}}
                 </md-card-content>
-                <hr>
                 <md-card-actions>
                     <button [routerLink]="['/books']" md-raised-button> <i class="material-icons">view_module</i> All Books </button>
-                    <button [routerLink]="['/edit-book/'+id]" md-raised-button color="primary"> <i class="material-icons">mode_edit</i> Edit </button> 
+                    <button [routerLink]="['/edit-book/'+id]"  md-raised-button class="editButton"> <i class="material-icons">mode_edit</i> Edit </button> 
                     <button [routerLink]="['/delete-book/'+id]" md-raised-button color="warn"> <i class="material-icons">delete_sweep</i> Delete </button>
                 </md-card-actions>
             </md-card>

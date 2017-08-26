@@ -26,8 +26,8 @@ export class BookComponent implements OnInit {
     this.firebaseService.getBookDetails(this.id).subscribe(book => {
       this.title = book.title;
       this.author = book.author;
-      this.dateadded = book.dateAdded;
-      this.dateread = book.dateRead;
+      this.dateadded = book.dateadded;
+      this.dateread = book.dateread;
       this.price=book.price;
       this.rate = book.price;
       this.rate = book.price;

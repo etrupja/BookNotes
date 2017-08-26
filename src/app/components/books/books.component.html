@@ -1,18 +1,14 @@
 <md-toolbar> All books </md-toolbar>
-<md-grid-list cols="3">
+<md-grid-list cols="3" >
     <md-grid-tile *ngFor="let book of allBooks">
-        <md-card class="example-card">
+        <md-card class="bookTile">
             <md-card-header>
-              <div md-card-avatar class="example-header-image"></div>
               <md-card-title><h4>{{book.title}}</h4></md-card-title>
             </md-card-header>
             <img md-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
-            <md-card-content>
-              <p></p>
-            </md-card-content>
             <md-card-actions>
-              <button md-button md-raised-button [routerLink]="['/book/'+book.$key]"> Book Details</button>
-              <button md-button md-raised-button [routerLink]="['/edit-book/'+book.$key]"> Edit Book</button>
+              <button md-button md-raised-button [routerLink]="['/book/'+book.$key]"> <i class="material-icons">visibility</i> Book Details</button>
+              <button md-button md-raised-button class="editButton" [routerLink]="['/edit-book/'+book.$key]"> <i class="material-icons">mode_edit</i> Edit Book</button>
             </md-card-actions>
           </md-card>
     </md-grid-tile>

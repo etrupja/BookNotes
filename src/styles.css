@@ -34,12 +34,15 @@ md-grid-tile{
     box-shadow: 0 0 1px black;
 }
 
-.details-book{
-    margin:0 auto;
-    width: 60%;
-}
 
 .left{float: left}
 .right{float: left; padding: 25px;}
 
 .delete-confirm{margin:0 auto; width: 40%;}
+.details-book{ margin:0 auto; width: 60%; }
+.bookTile{padding:25px auto;}
+.editButton{
+    color :white !important;
+    background-color: rgba(255, 222, 121, 0.96);
+}
+
