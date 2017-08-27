@@ -31,6 +31,7 @@ import {
   MdDatepickerModule, 
   MdNativeDateModule, 
   MdToolbarModule, 
+  MdProgressSpinnerModule,
   MdTabsModule,
   MdListModule,
   MdIconModule,
@@ -82,7 +83,8 @@ export const APP_DATE_FORMATS =
     FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MdButtonModule, MdCheckboxModule,MdCardModule,MdGridListModule,MdInputModule,MdDatepickerModule,MdNativeDateModule,MdToolbarModule,MdListModule,MdIconModule,MdTabsModule, 
+    MdButtonModule, MdCheckboxModule,MdCardModule,MdGridListModule,MdInputModule,MdDatepickerModule,
+    MdNativeDateModule,MdToolbarModule,MdListModule,MdIconModule,MdTabsModule, MdProgressSpinnerModule, 
     AngularFireModule.initializeApp(environment.firebase, 'book-store'), // imports firebase/app needed for everything
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features

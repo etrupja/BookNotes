@@ -1,4 +1,8 @@
-<div *ngIf="authenticated"> 
+<div *ngIf="!favoriteBooks && authenticated" class="spinner"> 
+    <md-spinner></md-spinner>
+</div>
+
+<div *ngIf="favoriteBooks && authenticated "> 
     <md-toolbar> My Top Rated Books </md-toolbar>
     <md-grid-list cols="3">
         <md-grid-tile *ngFor="let book of favoriteBooks">

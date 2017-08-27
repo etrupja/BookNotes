@@ -1,5 +1,9 @@
 <md-toolbar color="warn"> Delete confirmation </md-toolbar>
-<div class="delete-confirm">
+<div *ngIf="!bookTitle" class="spinner"> 
+    <md-spinner></md-spinner>
+</div>
+
+<div class="delete-confirm" *ngIf="bookTitle">
     <md-toolbar color="primary">You are about to delete the book: "{{bookTitle}}".</md-toolbar>
     <md-toolbar> 
         <md-toolbar-row>

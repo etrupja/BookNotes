@@ -2,22 +2,23 @@
 
 <div class="add-book-form">
     <a [routerLink]="['/books']">Back</a>
-    <form (submit)="submitAdd()">
+    <form (submit)="submitAdd()" #myForm="ngForm">
       <md-input-container class="full-width">
-        <input mdInput placeholder="Book Title" [(ngModel)]="title" name="title">
+        <input mdInput placeholder="Book Title" [(ngModel)]="title" name="title" required >
+      </md-input-container>
+      
+      <md-input-container class="full-width">
+        <input mdInput placeholder="Book Author" [(ngModel)]="author" name="author" required>
       </md-input-container>
       <md-input-container class="full-width">
-        <input mdInput placeholder="Book Author" [(ngModel)]="author" name="author">
-      </md-input-container>
-      <md-input-container class="full-width">
-        <input mdInput placeholder="Book Price" type="number" [(ngModel)]="price" name="price">
+        <input mdInput placeholder="Book Price" type="number" [(ngModel)]="price" name="price" required>
       </md-input-container>
     
       <table class="full-width" cellspacing="10px;">
           <tr>
             <td>
                 <md-input-container class="full-width">
-                    <input mdInput [mdDatepicker]="dateadded" placeholder="Date Added " >
+                    <input mdInput [mdDatepicker]="dateadded" placeholder="Date Added ">
                     <button mdSuffix [mdDatepickerToggle]="dateadded"></button>
                   </md-input-container>
                   <md-datepicker #dateadded (selectedChanged)="updateDateAdded($event)"></md-datepicker>
@@ -43,10 +44,10 @@
       </div>
       
       <md-input-container class="third-width">
-          <input mdInput placeholder="Image Url (enter image URL)" [(ngModel)]="imageUrl" name="imageUrl">
-      </md-input-container>
+          <input mdInput placeholder="Image Url (enter image URL)" [(ngModel)]="imageUrl" name="imageUrl" required>
+      </md-input-container><br>
       <img src="{{imageUrl}}" alt="{{title}}">
       <hr>
-      <button md-raised-button value="submit"> Create Book </button>
+      <button md-raised-button value="submit" [disabled]="!myForm.form.valid"> Create Book </button>
     </form>
 </div>

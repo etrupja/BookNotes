@@ -1,5 +1,9 @@
-<md-toolbar> All books </md-toolbar>
-<md-grid-list cols="3" >
+<div *ngIf="!allBooks" class="spinner"> 
+  <md-spinner></md-spinner>
+</div>
+<div *ngIf="allBooks">
+  <md-toolbar> All books </md-toolbar>
+  <md-grid-list cols="3" >
     <md-grid-tile *ngFor="let book of allBooks">
         <md-card class="bookTile">
             <md-card-header>
@@ -12,4 +16,5 @@
             </md-card-actions>
           </md-card>
     </md-grid-tile>
-</md-grid-list>
+  </md-grid-list>
+</div>

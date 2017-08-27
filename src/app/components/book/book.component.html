@@ -1,6 +1,10 @@
 <md-toolbar> Book Details </md-toolbar>
 
-<div class="details-book">
+<div *ngIf="!title" class="spinner"> 
+     <md-spinner></md-spinner>
+</div>
+
+<div class="details-book" *ngIf="title">
         <md-card>
                 <md-card-title>
                         <span class="md-headline">{{title}}</span>
@@ -13,14 +17,15 @@
                         <md-list>
                                 <md-list-item> <i class="material-icons">person_pin</i> Author:&nbsp;&nbsp;<b> {{author}}</b> </md-list-item>
                                 <md-list-item> <i class="material-icons">date_range</i> Date Added:&nbsp;&nbsp;<b> {{dateadded}}</b> </md-list-item>
-                                <md-list-item> <i class="material-icons">date_range</i> Date Read:&nbsp;&nbsp;<b> {{dateread}}</b> </md-list-item>
+                                <md-list-item *ngIf="dateread"> <i class="material-icons">date_range</i> Date Read:&nbsp;&nbsp;<b> {{dateread}}</b> </md-list-item>
                                 <md-list-item> <i class="material-icons">attach_money</i> Price:&nbsp;&nbsp;<b> {{price}}</b></md-list-item>
-                                <md-list-item> <i class="material-icons">star</i> Rate:&nbsp;&nbsp;<b>{{rate}}</b></md-list-item>
+                                <md-list-item *ngIf="rate"> <i class="material-icons">star</i> Rate:&nbsp;&nbsp;<b>{{rate}}</b></md-list-item>
                         </md-list>
                     </div>
                     <hr>
                     <md-toolbar>Description</md-toolbar>
                     {{description}}
+                    <p *ngIf="!description"> No description for this book! </p>
                 </md-card-content>
                 <md-card-actions>
                     <button [routerLink]="['/books']" md-raised-button> <i class="material-icons">view_module</i> All Books </button>

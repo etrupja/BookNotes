@@ -18,10 +18,12 @@ export class HomeComponent implements OnInit {
   unreadBooks: any;
 
   //authentication related
-  authenticated: boolean = false;
+  authenticated;
   user: Observable<firebase.User>;
   
   constructor(private firebaseService: FirebaseService, public af: AngularFireAuth) {
+    this.authenticated = false;
+    
     this.af.authState.subscribe(
       (auth) => {
         if (auth != null) {
@@ -39,12 +41,5 @@ export class HomeComponent implements OnInit {
       });
   }
   
-  ngOnInit() {
-    this.firebaseService.getFavoriteBooks().subscribe(favoriteBooks =>{
-      this.favoriteBooks = favoriteBooks;
-    })
-    this.firebaseService.getUnreadBooks().subscribe(books =>{
-      this.unreadBooks = books;
-    })
-  }
+  ngOnInit() {}
 }
