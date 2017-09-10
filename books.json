@@ -1,0 +1,55 @@
+{
+  "books" : {
+    "-Ks9A3-eIu1b8faiP6u1" : {
+      "author" : "Grant Cardone",
+      "dateadded" : "2017-8-9",
+      "dateread" : "2017-8-27",
+      "description" : "The secret to extraordinary success is to put in 10 times the relevant effort than most people, and to condition your mind for the success. You also have to recognize that with the increased efforts, increased obstacles will confront you, and you have to work your way around and through them.\n\nMega success is not possible without overexposure, because you have to be everywhere at the same time, so people recognize your name, brand and logo.\n\nAccording to The 10X Rule by Grant Cardone, the secret to extraordinary success is to put in 10 times the relevant effort than most people, and to condition your mind for the success. You also have to recognize that with the increased efforts, increased obstacles will confront you, and you have to work your way around and through them.\n\nThe book gives you ideas on how to grow a business fast.",
+      "imageUrl" : "http://cdn2.btrstatic.com/pics/showpics/large/261663_pXyAOnzs.jpg",
+      "price" : 16.96,
+      "rate" : 3.9,
+      "title" : "The 10X Rule"
+    },
+    "-Ks9DMa1mociWYhuU3N3" : {
+      "author" : "Peter Thiel",
+      "dateadded" : "2017-8-22",
+      "imageUrl" : "https://aydenjacobdotcom4.files.wordpress.com/2016/02/zero_to_one.jpg?w=400",
+      "price" : 18.64,
+      "title" : "Zero to One"
+    },
+    "-KsNa2IqF0HtVBo4KIXl" : {
+      "author" : "Ashlee Vance",
+      "dateadded" : "2017-8-24",
+      "dateread" : "2017-8-25",
+      "description" : "In the spirit of Steve Jobs and Moneyball, Elon Musk is both an illuminating and authorized look at the extraordinary life of one of Silicon Valley's most exciting, unpredictable, and ambitious entrepreneurs--a real-life Tony Stark--and a fascinating exploration of the renewal of American invention and its new \"makers.\"\nElon Musk spotlights the technology and vision of Elon Musk, the renowned entrepreneur and innovator behind SpaceX, Tesla, and SolarCity, who sold one of his Internet companies, PayPal, for $1.5 billion. Ashlee Vance captures the full spectacle and arc of the genius's life and work, from his tumultuous upbringing in South Africa and flight to the United States to his dramatic technical innovations and entrepreneurial pursuits.\nVance uses Musk's story to explore one of the pressing questions of our age: can the nation of inventors and creators who led the modern world for a century still compete in an age of fierce global competition? He argues that Musk--one of the most unusual and striking figures in American business history--is a contemporary, visionary amalgam of legendary inventors and industrialists including Thomas Edison, Henry Ford, Howard Hughes, and Steve Jobs. More than any other entrepreneur today, Musk has dedicated his energies and his own vast fortune to inventing a future that is as rich and far-reaching as the visionaries of the golden age of science-fiction fantasy.\nThorough and insightful, Elon Musk brings to life a technology industry that is rapidly and dramatically changing by examining the life of one of its most powerful and influential titans.",
+      "imageUrl" : "https://d.allegroimg.com/s400/014968/a4d959604fbbab9d1807eae5d57d",
+      "price" : 11.55,
+      "rate" : 4.8,
+      "title" : "Elon Musk"
+    },
+    "-KsNa6Nmu0M67D8rZh_G" : {
+      "author" : "Eric Schmidt & Jonathan Rosenberg",
+      "dateadded" : "2017-8-24",
+      "imageUrl" : "https://static.businessinsider.com/image/551d80c4ecad049b13c2b3a5-400/image.jpg",
+      "price" : 15.67,
+      "title" : "How google works"
+    },
+    "-KsZ42HAqB-18oPs61Ar" : {
+      "author" : "Grant Cardone",
+      "dateadded" : "2017-8-1",
+      "dateread" : "2017-8-25",
+      "description" : "Sell or Be Sold is based on the premise that every day we are selling: the child who wants a piece of candy and needs to convince his/her parents to comply, the teacher to the student on why learning trigonometry is important and the sales professional who closes the deal with a prospect. With this in mind, the ability to communicate, persuade, negotiate and close a deal is important regardless of your profession. Grant takes you from amateur to professional by explaining the key differences at each stage, how to make the transition from average to great and provides perspectives needed to help you be successful at “selling” in your chosen endeavor",
+      "imageUrl" : "http://cdn2.btrstatic.com/pics/showpics/large/261663_nqOVVNea.png",
+      "price" : 19.96,
+      "rate" : 4.9,
+      "title" : "Sell or Be Sold"
+    },
+    "-KsZ4ugfbbPPxbb91v01" : {
+      "author" : "Carol Dweck",
+      "dateadded" : "2017-8-27",
+      "imageUrl" : "http://cdn2.btrstatic.com/pics/showpics/large/388609_6U6DDHpQ.jpg",
+      "price" : 11.99,
+      "title" : "Mindset"
+    }
+  }
+}
