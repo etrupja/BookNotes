@@ -15,12 +15,12 @@
       
       <md-input-container class="full-width" >
           <input mdInput [(ngModel)]="dateadded" [mdDatepicker]="da" placeholder="Date Added " [ngModelOptions]="{standalone: true}">
-          <button mdSuffix [mdDatepickerToggle]="da"></button>
+          <md-datepicker-toggle mdSuffix [for]="da"></md-datepicker-toggle>
         </md-input-container>
       <md-datepicker #da (selectedChanged)="updateDateAdded($event)"></md-datepicker>
       <md-input-container class="full-width" >
           <input mdInput [(ngModel)]="dateread" [mdDatepicker]="dr" placeholder="Date Read " [ngModelOptions]="{standalone: true}">
-          <button mdSuffix [mdDatepickerToggle]="dr"></button>
+          <md-datepicker-toggle mdSuffix [for]="dr"></md-datepicker-toggle>
         </md-input-container>
       <md-datepicker #dr (selectedChanged)="updateDateRead($event)"></md-datepicker>
 
