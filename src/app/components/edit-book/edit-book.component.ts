@@ -20,9 +20,6 @@ export class EditBookComponent implements OnInit {
   price;
   rate;
 
-  dateTest =  new Date(2015, 9, 8, 0, 0, 0); 
-  myDate:any = this.dateTest.toLocaleString();
-
   dateAdapter:AppDateAdapter = new AppDateAdapter();
   
   constructor(
